@@ -14,5 +14,5 @@ export default HeadComponent;
 
 HeadComponent.defaultProps = {
   title: "PP.GG",
-  description: "빠른 프로젝트 시작을 위한 나만의 보일러 플레이트 입니다.",
+  description: "탁구 전적 사이트 입니다.",
 };

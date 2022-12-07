@@ -9,4 +9,8 @@ export default Header;
 
 const Wrapper = styled.header`
   height: 60px;
+  background-color: var(--brandColor);
+  & * {
+    background-color: inherit;
+  }
 `;
