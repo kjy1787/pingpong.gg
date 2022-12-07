@@ -20,6 +20,18 @@ function Players() {
   return (
     <Wrapper>
       <Profile id={id}></Profile>
+      <Test>
+        <ContentContainer width="30%">
+          <Content></Content>
+          <Content></Content>
+          <Content></Content>
+        </ContentContainer>
+        <ContentContainer width="70%">
+          <Content></Content>
+          <Content></Content>
+          <Content></Content>
+        </ContentContainer>
+      </Test>
     </Wrapper>
   );
 }
@@ -30,4 +42,31 @@ Players.getLayout = function getLayout(page) {
   return <CommonLayout>{page}</CommonLayout>;
 };
 
-const Wrapper = styled.div``;
+const Wrapper = styled.div`
+  background-color: var(--sectionLine);
+  & * {
+    background-color: inherit;
+  }
+`;
+const Test = styled.div`
+  display: flex;
+  gap: 16px;
+  width: 1080px;
+  margin: 16px auto;
+`;
+
+const ContentContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: ${(props) => props.width};
+`;
+const Content = styled.div`
+  width: 100%;
+  height: 100px;
+  background-color: var(--bg);
+  border-radius: 5px;
+  & * {
+    background-color: inherit;
+  }
+`;

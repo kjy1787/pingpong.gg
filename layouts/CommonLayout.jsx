@@ -20,10 +20,10 @@ export default CommonLayout;
 const Container = styled.div`
   min-width: 320px;
   height: 100vh;
-  background-color: var(--textBox);
+  background-color: var(--sectionLine);
 `;
 const BodyContent = styled.div`
   margin: 0px auto;
-  width: 1080px;
   min-height: calc(100% - 108px);
+  background-color: var(--sectionLine);
 `;
