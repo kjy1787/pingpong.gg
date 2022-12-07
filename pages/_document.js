@@ -4,14 +4,14 @@ export default function Document() {
   return (
     <Html>
       <Head>
-        <meta name="description" content="Next.js boilerplate" />
+        <meta name="description" content="탁구 전적 사이트" />
 
         {/* 아이콘 생성 사이트 - https://favicomatic.com */}
         <meta name="mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-        <meta name="apple-mobile-web-app-title" content="boilerplate" />
-        <meta name="application-name" content="boilerplate" />
+        <meta name="apple-mobile-web-app-title" content="PP.GG" />
+        <meta name="application-name" content="PP.GG" />
         <meta name="theme-color" content="#ffffff" />
         <meta name="msapplication-TileColor" content="#ffffff" />
         <meta
