@@ -16,7 +16,7 @@ export default Footer;
 Footer.defaultProps = {
   color: "var(--main)",
   borderTop: "2px solid var(--sectionLine)",
-  backgroundColor: "var(--textBox)",
+  backgroundColor: "var(--sectionLine)",
 };
 
 const Wrapper = styled.footer`

@@ -11,6 +11,7 @@ function Header(props) {
           <LogoText>PP.GG</LogoText>
         </Link>
       </LogoWrapper>
+
       <MenuContainer>
         <Link href="/">
           <a>
@@ -19,17 +20,24 @@ function Header(props) {
             </LinkBox>
           </a>
         </Link>
-        <Link href="/" passHref>
+        <Link href="/statistics" passHref>
           <a>
             <LinkBox>
               <LinkText>통계</LinkText>
             </LinkBox>
           </a>
         </Link>
-        <Link href="/" passHref>
+        <Link href="/ranking" passHref>
           <a>
             <LinkBox>
               <LinkText>랭킹</LinkText>
+            </LinkBox>
+          </a>
+        </Link>
+        <Link href="/players/maxosa72" passHref>
+          <a>
+            <LinkBox>
+              <LinkText>플레이어</LinkText>
             </LinkBox>
           </a>
         </Link>

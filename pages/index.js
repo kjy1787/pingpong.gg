@@ -4,6 +4,7 @@ import Axios from "axios";
 import React, { useEffect } from "react";
 import { useRecoilState } from "recoil";
 import Banner from "@/components/home/Banner";
+import SearchInput from "@/components/home/SearchInput";
 import HomeLayout from "@/layouts/HomeLayout";
 
 function Home() {
@@ -24,6 +25,8 @@ function Home() {
       <BannerWrapper backgroundColor={getBackgroundColor()}>
         <Banner></Banner>
       </BannerWrapper>
+
+      <SearchInput></SearchInput>
     </Wrapper>
   );
 }
@@ -36,7 +39,9 @@ Home.getLayout = function getLayout(page) {
 
 const Wrapper = styled.div`
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
   background-color: var(--brandColor);
   background-color: ${(props) => props.backgroundColor};
 `;

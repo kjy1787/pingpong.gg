@@ -13,6 +13,12 @@ function HomeLayout(props) {
     return theme === "Dark" ? "var(--bg)" : "var(--brandColor)";
   };
 
+  const getBorderTop = () => {
+    return theme === "Dark"
+      ? "2px solid var(--sectionLine)"
+      : "2px solid var(--blue600)";
+  };
+
   return (
     <Container>
       <Head></Head>
@@ -22,8 +28,8 @@ function HomeLayout(props) {
       </BodyContent>
       <Footer
         color="white"
-        backgroundColor="var(--brandColor)"
-        borderTop="2px solid var(--blue600)"
+        borderTop={getBorderTop()}
+        backgroundColor={getBackgroundColor()}
       ></Footer>
     </Container>
   );
