@@ -18,6 +18,7 @@ function CommonLayout(props) {
 export default CommonLayout;
 
 const Container = styled.div`
+min-width:320px;
   height: 100vh;
 `;
 const BodyContent = styled.div`

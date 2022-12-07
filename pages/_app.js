@@ -49,3 +49,7 @@ const ReactQueryDevtoolsWrapper = styled.div`
     color: inherit;
   }
 `;
+
+// import { themeState } from "@/recoil/atom";
+// import { useRecoilState } from "recoil";
+// const [theme, setTheme] = useRecoilState(themeState);

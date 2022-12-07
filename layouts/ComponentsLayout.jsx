@@ -2,7 +2,6 @@ import styled from "@emotion/styled";
 import { useRouter } from "next/router";
 import React, { useEffect, useRef, useState } from "react";
 import Theme from "@/components/common/Theme";
-import NavigationBar from "@/components/layout/NavigationBar";
 import CloseSvg from "@/svg/CloseSvg";
 import ViewMoreSvg from "@/svg/ViewMoreSvg";
 
@@ -93,14 +92,14 @@ function ComponentsLayout(props) {
   return (
     <Wrapper>
       {/* 사이드바 */}
-      <Sidebar ref={sidebarRef} left={isOpenMenu ? "0px" : "-200px"}>
-        <Top>
+      <Sidebar ref={sidebarRef} left={isOpenMenu ? "0px" : "-201px"}>
+        <SideBarTop>
           <CloseSvg
             width={30}
             height={30}
             onClick={() => setIsOpenMenu(false)}
           ></CloseSvg>
-        </Top>
+        </SideBarTop>
         <ListBox>
           {pageList.map((item, key) => (
             <List key={key} onClick={() => changePage(item)}>
@@ -111,16 +110,16 @@ function ComponentsLayout(props) {
       </Sidebar>
 
       {/* Header */}
-      <Top>
+      <Header>
         <ViewMoreSvg
           width={30}
           height={30}
-          color="var(--main)"
+          color="white"
           onClick={() => setIsOpenMenu(true)}
         ></ViewMoreSvg>
         <Title>{title}</Title>
         <Theme></Theme>
-      </Top>
+      </Header>
 
       {/* 본문 */}
       <Content>{props.children}</Content>
@@ -133,16 +132,33 @@ function ComponentsLayout(props) {
 
 export default ComponentsLayout;
 const Wrapper = styled.div``;
-const Top = styled.div`
+const Header = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
   min-width: 200px;
   height: 60px;
   padding: 0px 24px;
+  background-color: var(--brandColor);
+  & * {
+    background-color: inherit;
+  }
+`;
+const SideBarTop = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-width: 200px;
+  height: 60px;
+  padding: 0px 24px;
+  background-color: var(--textBox);
+  & * {
+    background-color: inherit;
+  }
 `;
 const Title = styled.h1`
   font: var(--headline24);
+  color: white;
 `;
 const Content = styled.div`
   min-width: 360px;
