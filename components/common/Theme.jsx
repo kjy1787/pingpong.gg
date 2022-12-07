@@ -40,10 +40,10 @@ const Theme = (props) => {
   };
 
   useEffect(() => {
-    if (localStorage.getItem("theme") === "Light") {
-      setLight();
-    } else {
+    if (localStorage.getItem("theme") === "Dark") {
       setDark();
+    } else {
+      setLight();
     }
   }, [setDark, setLight]);
 
