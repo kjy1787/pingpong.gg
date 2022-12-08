@@ -1,19 +1,18 @@
 import styled from "@emotion/styled";
 import Image from "next/image";
 import React from "react";
-import ornnProfile from "@/images/ornnProfile.webp";
 
 function Profile(props) {
   return (
     <Wrapper>
       <Content>
         <ImageWrapper>
-          <Image
+          {/* <Image
             src={ornnProfile}
             width={100}
             height={100}
             alt="profileImg"
-          ></Image>
+          ></Image> */}
         </ImageWrapper>
       </Content>
     </Wrapper>

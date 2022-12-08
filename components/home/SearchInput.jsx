@@ -1,43 +1,77 @@
-import { themeState } from "@/recoil/atom";
 import styled from "@emotion/styled";
-import React, { useState } from "react";
-import { useRecoilState } from "recoil";
+import Image from "next/image";
+import { useRouter } from "next/router";
+import React, { useRef, useState } from "react";
+import Axios from "@/api/index";
+import useClickOutside from "@/hooks/useClickOutside";
+import useDebounce from "@/hooks/useDebounce";
 
 function SearchInput(props) {
-  const [theme, setTheme] = useRecoilState(themeState);
-  const [value, setValue] = useState("");
+  const router = useRouter();
+  const ref = useRef(null);
+  const [isOpen, setIsOpen] = useState(false);
+  const [userList, setUserList] = useState([]);
+
+  useClickOutside(ref, () => {
+    setIsOpen(false);
+  });
+
+  const getUserList = useDebounce((name) => {
+    if (name) {
+      Axios.get("/api/user", { params: { name: name } }).then((res) => {
+        setUserList(res.data);
+      });
+    }
+  }, 100);
 
   return (
-    <Wrapper width={props.width}>
+    <Wrapper ref={ref} width={props.width}>
       <InputContainer>
-        <Text>Search</Text>
+        <Title>Search</Title>
         <Input
-          type={props.type}
-          name={props.name}
+          type="text"
           placeholder="소환사명"
-          value={value}
           onChange={(e) => {
-            setValue(e.target.value);
-            props.onChange(e);
+            const { value } = e.target;
+            getUserList(value);
           }}
+          onFocus={() => setIsOpen(true)}
         ></Input>
       </InputContainer>
       <GG>.GG</GG>
+      {isOpen && userList.length > 0 && (
+        <ListContainer>
+          {userList.map((user, key) => (
+            <ListBox
+              key={key}
+              onClick={() => {
+                router.push(`/players/${user.id}`);
+              }}
+            >
+              <ImageBox>
+                <Image
+                  src={user.imgUrl}
+                  width={36}
+                  height={36}
+                  alt="profileImg"
+                ></Image>
+              </ImageBox>
+              <TextBox>
+                <Text>{user.name}</Text>
+                <SubText>{user.tier}</SubText>
+              </TextBox>
+            </ListBox>
+          ))}
+        </ListContainer>
+      )}
     </Wrapper>
   );
 }
 
 export default SearchInput;
 
-SearchInput.defaultProps = {
-  label: "LABEL",
-  type: "text",
-  value: "",
-  placeholder: "placeholder",
-  onChange: () => {},
-};
-
 const Wrapper = styled.div`
+  position: relative;
   display: flex;
   align-items: center;
   width: 800px;
@@ -58,16 +92,49 @@ const Input = styled.input`
   width: 100%;
   caret-color: var(--brandColor);
 `;
-const Icon = styled.div`
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-`;
-const Text = styled.p`
+const Title = styled.p`
   font: var(--body16);
 `;
 const GG = styled.div`
   color: var(--brandColor);
   font-size: 24px;
   font-weight: 900;
+`;
+const ListContainer = styled.div`
+  position: absolute;
+  top: 60px;
+  left: 32px;
+  width: 680px;
+  background-color: var(--textBox);
+`;
+const ListBox = styled.div`
+  display: flex;
+  height: 50px;
+  padding: 6px 16px;
+  cursor: pointer;
+  &:hover {
+    background-color: var(--icon1);
+  }
+  & * {
+    background-color: inherit;
+  }
+`;
+const ImageBox = styled.div`
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  margin-right: 16px;
+  overflow: hidden;
+`;
+const TextBox = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+`;
+const Text = styled.p`
+  font: var(--body14);
+`;
+const SubText = styled.p`
+  font: var(--caption12);
+  color: var(--sub);
 `;
