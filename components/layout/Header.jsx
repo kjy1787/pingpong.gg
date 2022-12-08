@@ -8,7 +8,9 @@ function Header(props) {
     <Wrapper {...props}>
       <LogoWrapper>
         <Link href="/">
-          <LogoText>PP.GG</LogoText>
+          <a>
+            <LogoText>PP.GG</LogoText>
+          </a>
         </Link>
       </LogoWrapper>
 
@@ -34,10 +36,10 @@ function Header(props) {
             </LinkBox>
           </a>
         </Link>
-        <Link href="/players/maxosa72" passHref>
+        <Link href="/tiers" passHref>
           <a>
             <LinkBox>
-              <LinkText>플레이어</LinkText>
+              <LinkText>티어표</LinkText>
             </LinkBox>
           </a>
         </Link>

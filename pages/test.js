@@ -18,7 +18,9 @@ function Test() {
 
   const getDate = async () => {
     // user 조회 API 호출
-    const tmpUserList = await Axios.get("/api/user").then((res) => {
+    const tmpUserList = await Axios.get("/api/user", {
+      params: { name: "" },
+    }).then((res) => {
       return res.data;
     });
 
@@ -46,6 +48,7 @@ function Test() {
         totalDeal: totalDeal,
         winPoints: winPoints,
         losePoints: losePoints,
+        winRate: (winPoints / (winPoints + losePoints)) * 100,
       });
     });
 

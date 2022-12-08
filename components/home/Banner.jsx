@@ -26,7 +26,7 @@ function Banner() {
         <BannerWrapper backgroundColor="var(--blue300)">
           <BannerContent>
             <Title>업데이트</Title>
-            <Description>통계 및 소환사 페이지 업데이트</Description>
+            <Description>소환사 검색 및 티어표 페이지 업데이트</Description>
           </BannerContent>
         </BannerWrapper>
 
