@@ -2,9 +2,20 @@
   {
     "key": "1",
     "id": "maxosa72",
-    "imgUrl": "/images/ornnProfile.webp"
+    "name": "야 허리 좀 펴라",
+    "imgUrl": "/images/champions/ornn.webp"
   },
-  { "key": "2", "id": "kjy1787", "imgUrl": "/images/heimerdingerProfile.webp" },
+  {
+    "key": "2",
+    "id": "kjy1787",
+    "name": "까치구이",
+    "imgUrl": "/images/champions/heimerdinger.webp"
+  },
 
-  { "key": "3", "id": "jiseok2301", "imgUrl": "/images/shacoProfile.webp" }
+  {
+    "key": "3",
+    "id": "jiseok2301",
+    "name": "샤코 장인",
+    "imgUrl": "/images/champions/shaco.webp"
+  }
 ]

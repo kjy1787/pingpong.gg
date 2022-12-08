@@ -2,9 +2,9 @@ import styled from "@emotion/styled";
 import Image from "next/image";
 import React from "react";
 import Carousel from "@/components/common/Carousel";
-import heimerdingerBanner from "@/images/heimerdingerBanner.jpg";
-import ornnBanner from "@/images/ornnBanner.jpg";
-import shacoBanner from "@/images/shacoBanner.jpg";
+import heimerdingerBanner from "@/images/banners/heimerdingerBanner.jpg";
+import ornnBanner from "@/images/banners/ornnBanner.jpg";
+import shacoBanner from "@/images/banners/shacoBanner.jpg";
 
 function Banner() {
   return (
