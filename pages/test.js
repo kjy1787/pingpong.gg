@@ -1,15 +1,6 @@
 import styled from "@emotion/styled";
-import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import Axios from "@/api/index";
-
-const data = {
-  date: "2022-12-5",
-  winnerId: "",
-  loserId: "",
-  winnerPoints: "",
-  loserPoints: "",
-};
 
 function Test() {
   useEffect(() => {
