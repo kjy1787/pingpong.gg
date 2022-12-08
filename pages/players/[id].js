@@ -5,9 +5,6 @@ import React, { useEffect, useState } from "react";
 import Profile from "@/components/players/Profile";
 import CommonLayout from "@/layouts/CommonLayout";
 
-//jiseok2301
-//kjy1787
-
 function Players() {
   const router = useRouter();
   const [id, setId] = useState("");
