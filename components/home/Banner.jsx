@@ -12,7 +12,7 @@ function Banner() {
       <Carousel
         loop={true}
         autoplay={{
-          delay: 220000,
+          delay: 8000,
           disableOnInteraction: false,
         }}
       >
