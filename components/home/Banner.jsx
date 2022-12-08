@@ -25,15 +25,15 @@ function Banner() {
 
         <BannerWrapper backgroundColor="var(--blue300)">
           <BannerContent>
-            <Title>ㅊㅇㅎ 선수</Title>
-            <Description>12월 6일 생일 축하합니다🎉</Description>
+            <Title>업데이트</Title>
+            <Description>통계 및 소환사 페이지 업데이트</Description>
           </BannerContent>
         </BannerWrapper>
 
         <BannerWrapper backgroundColor="var(--blue700)">
           <BannerContent>
-            <Title>오늘은 파스타 먹는날</Title>
-            <Description>12월 8일은 파스타 할인 이벤트!</Description>
+            <Title>파파존스 1+1 이벤트</Title>
+            <Description>매주 금요일은 파파존스</Description>
           </BannerContent>
         </BannerWrapper>
 
@@ -47,8 +47,11 @@ function Banner() {
         </BannerWrapper>
 
         <BannerWrapper>
-          <Comment top="20%" left="80%">
-            정직하게
+          <Comment top="12%" left="73%">
+            중요한건
+          </Comment>
+          <Comment top="27%" left="75%">
+            꺾이지 않는 마음
           </Comment>
           <ImageAdjustment top="-20%">
             <Image src={ornnBanner} alt="bannerImage"></Image>
@@ -56,7 +59,7 @@ function Banner() {
         </BannerWrapper>
 
         <BannerWrapper>
-          <Comment top="20%" left="5%">
+          <Comment top="20%" left="2%">
             네트만 넘기면 이기던데?
           </Comment>
           <ImageAdjustment top="-50%">
